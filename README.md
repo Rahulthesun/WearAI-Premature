@@ -2,10 +2,10 @@
 The github repository for the source code of the premature version of the Gen-Ai based Apparel Design Creation Website WearAi .   
 This interactive webapp uses OpenAi's DallE-2 and let users create apparel (Tshirts) with prompts and purchase them .  
 The idea behind the project is to utilize Gen-AI And Image Generation AI for personalizing clothing.
-Made with :  
->Django (Backend) with Sqlite Database.
->Html , Css , Javascript (Frontend)
->DALLE-2 accessed with OpenAI API.
+Made with :    
+Django (Backend) with Sqlite Database.  
+Html , Css , Javascript (Frontend)  
+DALLE-2 accessed with OpenAI API.
 
 PICTURES:  
 Home Page:    
