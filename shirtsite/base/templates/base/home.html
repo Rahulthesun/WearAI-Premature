@@ -1,0 +1,23 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <a href="#">WearAI</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</header>
+<section class="hero">
+    <div class="hero-content">
+        <h1 style="font-size:70px;">WearAI</h1>
+        <p>Create What You Wear</p>
+        <a href="{{url}}" class="cta-button">Create Now</a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WearAI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Dela+Gothic+One&family=Fuggles&family=Inter:wght@100;200&family=Oswald:wght@200;400&family=PT+Sans&family=Pacifico&family=Source+Code+Pro:wght@200;500&display=swap" rel="stylesheet">
+    <style>
+      /* Reset some default styles */
+        
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      /* Define styles for the header and navigation */
+      header {
+          background-color: transparent;
+          position: fixed;
+          width: 100%;
+          z-index: 1000;
+          transition: background-color 0.3s ease-in-out;
+      }
+
+      .navbar {
+          background-color: transparent;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px;
+      }
+
+      .logo a {
+          text-decoration: none;
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: #fff;
+          font-family: 'Source Code Pro', monospace;
+      }
+
+      .nav-links {
+          list-style: none;
+          display: flex;
+      }
+
+      .nav-links li {
+          margin-right: 20px;
+      }
+
+      .nav-links a {
+          text-decoration: none;
+          color: #fff;
+          font-weight: bold;
+          font-family: 'Source Code Pro', monospace;
+      }
+
+      /* Style the hero section */
+      .hero {
+          background-image: url('https://images.pexels.com/photos/6985132/pexels-photo-6985132.jpeg');
+          background-size: cover;
+          background-position: center;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          color: #fff;
+          padding: 0 20px;
+          font-family: 'Source Code Pro', monospace;
+      }
+
+      .hero-content h1 {
+          font-size: 3rem;
+          margin-bottom: 20px;
+          font-weight: bold;
+          animation: changeFont 2s infinite alternate; /* Add the animation here */
+      }
+
+      @keyframes changeFont {
+          0% {
+              font-family: 'Source Code Pro', monospace;
+          }
+
+          12.5%{
+              font-family: 'Croissant One', cursive;
+          }
+          25%{
+              font-family: 'Dela Gothic One', cursive;
+          }
+          37.5%{
+              font-family: 'Fuggles', cursive;
+          }
+          50%{
+              font-family: 'Inter', sans-serif;
+          }
+          62.5%{
+              font-family: 'Oswald', sans-serif;
+          }
+          87.5%{
+              font-family: 'Pacifico', cursive;
+          }
+          100% {
+              font-family: 'Montserrat', sans-serif;
+          }
+      }
+
+      .hero-content p {
+          font-size: 1.5rem;
+          margin-bottom: 40px;
+      }
+
+      .cta-button {
+          padding: 10px 20px;
+          background-color: #333;
+          color: #fff;
+          text-decoration: none;
+          border-radius: 5px;
+          font-weight: bold;
+          transition: background-color 0.3s ease-in-out;
+      }
+
+      .cta-button:hover {
+          background-color: #555;
+      }
+
+      /* Define styles for other sections as needed */
+
+      /* Style the footer */
+      footer {
+          background-color: #333;
+          color: #fff;
+          text-align: center;
+          padding: 20px 0;
+      }
+    </style>
+</head>
+<body>
+    {% block content %}
+
+    {% endblock %}
+    
+    <footer>
+        <p>&copy; 2023 WearAi. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

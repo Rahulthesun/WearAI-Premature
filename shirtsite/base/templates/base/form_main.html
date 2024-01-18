@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WearAI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Dela+Gothic+One&family=Fuggles&family=Inter:wght@100;200&family=Oswald:wght@200;400&family=PT+Sans&family=Pacifico&family=Source+Code+Pro:wght@200;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white; /* Set background color for the entire page */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%; /* Set the desired width of the container */
+    max-width: 400px; /* Limit the maximum width for larger screens */
+    margin: 0 auto; /* Center the container horizontally */
+    margin-top: 100px;
+}
+
+.login-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h2 {
+    font-family: 'Pacifico', cursive;
+    color: black;
+    margin-bottom: 30px;
+    font-size: 60px;
+}
+
+form label {
+    color: black;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="password"],
+button {
+    width: 100%;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: white;
+    color:black;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+button:hover {
+    background-color:white;
+    color: black;
+}
+
+button {
+    font-size: 24px;
+    width: 50%;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    border: 3px solid black;
+}
+
+button:hover {
+    background-color: white;
+}
+
+p {
+    color: black;
+    margin-top: 10px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Add CSS for error messages */
+.error-message {
+    color: #ff0000; /* Red color for error messages */
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+.tshirt-img img{
+    width: 300px;
+    border-color: #fff;
+    border-width: 2px;
+}
+    </style>
+</head>
+<body>
+    {% block content %}
+        
+    {% endblock %}
+    
+</body>
+</html>

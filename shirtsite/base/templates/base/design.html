@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Dela+Gothic+One&family=Fuggles&family=Inter:wght@100;200&family=Oswald:wght@200;400&family=PT+Sans&family=Pacifico&family=Source+Code+Pro:wght@200;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2335ac8b79.js" crossorigin="anonymous"></script>
+    <title>WearAi</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Source Code Pro', monospace;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 3px solid grey;
+            box-shadow: 15px 0px 1px whitesmoke;
+            border-radius: 15px;
+            margin-top: 50px;
+        }
+
+        .color-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4px;
+            background-color: white;
+            border: 3px solid grey;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .image-container {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background-image: url('https://img.freepik.com/premium-photo/mockup-white-tshirt_863013-65196.jpg?size=626&ext=jpg&ga=GA1.1.1252059208.1695720714&semt=ais');
+            background-size: cover;
+            background-position: center;
+            margin-left: 0px;
+        }
+
+        .overlay-image {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+            max-width: 100%; /* Make sure the image does not exceed the container */
+            height: auto;
+        }
+
+        .info-container {
+            margin-left: 80px;
+            margin-right: 20px;
+            text-align: left;
+            color: #fff;
+        }
+
+        .header {
+            font-size: 35px;
+            margin-bottom: 10px;
+            font-weight: bolder;
+        }
+
+        .subtext {
+            font-size: 15px;
+            margin-bottom: 0px;
+            margin-bottom: 0px;
+            text-align: left;
+            font-weight: light;
+        }
+
+        .info p {
+
+            font-size: 15px;
+            margin: 3px 0px;
+            color: black;
+        }
+
+        .price{
+            font-size: 40px;
+            font-weight: bold;
+            text-align: left;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+
+        .username{
+            text-align: left;
+            margin-left: 0px;
+            font-size: 18px;
+            margin-top: 420px;
+            color: #fff;
+        }
+
+        .logout{
+            position: absolute;
+            top:  0;
+            left: 0;
+            font-size: 18px;
+            color: #fff;
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+
+        .tryagain-button {
+            display: flex;
+            gap: 0px;
+            margin-bottom: 400px;
+        }
+
+        .tryagain-button button {
+            background-color: #333;
+            color: white;
+            border: var(--button-border);
+            padding: 10px 20px; /* Increase button padding */
+            border-radius: 8px; /* Make button corners round */
+            font-size: 20px; /* Increase font size */
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        .tryagain-button button:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .tryagain-button button i {
+            margin-right: 0px; /* Increase space between icon and text */
+        }
+    </style>
+</head>
+<body>
+    <a href="{{l_url}}"><h2 class="logout"><i class="fa-regular fa-circle-user" style="font-size: 30px;color: #fff;cursor: pointer;margin-left: 10px;margin-top:10px;"></i> logout </h2></a>
+    <div class="container">
+        <div class="tryagain-button">
+            <a style="text-decoration: none;color:white" href="{% url 'aires_edit' obj.id  %}"><button class="button"><i class="fas fa-arrow-left"></i></button></a>
+        </div>
+        <i class="fa-regular fa-circle-user" style="text-align: left;margin-right: 0px;font-size: 30px;margin-top: 420px;color: #fff;margin-right: 5px;cursor: pointer;"></i>
+        <h2 class="username">{{request.user| capfirst}}</h2>
+        <div class="image-container">
+            <img class="overlay-image" src="{{i_url}}" alt="Overlay Image">
+        </div>
+        <div class="info-container">
+            
+            <div class="header">Tshirt </div>
+            <div class="subtext">Half-Sleeve</div>
+            <div class="info">
+                <div class="color-container">
+                    <p>Color</p>
+                </div>
+                <div class="price">₹499</div>
+            </div>
+            <a href="{{url}}"><button>Proceed To Buy</button></a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+    
+
+
+
+        
+
+
+
+
+
+
+    

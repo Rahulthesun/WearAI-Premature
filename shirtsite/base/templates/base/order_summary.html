@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/853a55ecdc.js" crossorigin="anonymous"></script>
+    <title>Order Summary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Source Code Pro', monospace;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 3px solid grey;
+            box-shadow: 15px 0px 1px whitesmoke;
+            border-radius: 15px;
+            margin-top: 50px;
+            color: #fff;
+            width: 90%;
+            max-width: 550px; /* Adjust the maximum width as needed */
+        }
+
+        h1 {
+            margin-right: 120px;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+            margin-bottom: 20px;
+            
+        }
+
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4px;
+            background-color: black;
+            border: 3px solid grey;
+            border-radius: 15px;
+            margin-right: 20px;
+        }
+        .img-box{
+            position: relative;
+            width: 200px;
+            height: 300px;
+            margin: 0px 5px;
+            background-image: url('https://img.freepik.com/premium-photo/mockup-white-tshirt_863013-65196.jpg?size=626&ext=jpg&ga=GA1.1.1252059208.1695720714&semt=ais');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .overlay-image {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 55%;
+            max-width: 50%; /* Make sure the image does not exceed the container */
+            height: auto;
+        }
+
+
+
+        .order-info {
+            flex: 1;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 3px solid grey;
+            border-radius: 15px;
+        }
+
+        .order-info p {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .shipping-details {
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 3px solid grey;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .shipping-details h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .shipping-details p {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 300px;
+            padding: 10px 20px;
+            background-color: white;
+            color:black;
+            border: none;
+            border-radius: 3px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            font-size: 20px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        
+        .h12 {
+            margin-right: 55px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Order Summary <a style="text-decoration: none;" href="{% url 'aires_edit' obj.id %}"><i class="fa-solid fa-pen-to-square" style="color: brown; font-size: 25px;"></i></a></h1>
+        <div class="details">
+            <div class="box">
+                <div class="img-box">
+                    <img src="{{img_url}}" alt="Product Image" class="overlay-image">
+                </div>
+            </div>
+            <div class="order-info">
+                <h3 style="font-size: 30px;">Tshirt </h3>
+                <p style="color: green;">-Half Sleeve</p>
+                <p>Size: <b>{{ order.size }}</b></p>
+                <p>Price: <b>₹{{order.price}}</b></p>
+            </div>
+        </div>
+        <h1 class="h12">Shipping Details <a style="text-decoration: none;" href="{% url 'size_edit' order.id %}"><i class="fa-solid fa-pen-to-square" style="color: brown; font-size: 25px;"></i></a></h1>
+        <div class="shipping-details">
+            
+            <p>Customer Name: <b>{{ order.name }}</b></p>
+            <p>Email: <b>{{ order.email }}</b></p>
+            <p>Phone: <b>{{ order.phone }}</b></p>
+            <p>Address: <b>{{ order.address }}</b></p>
+        </div>
+        <div class="button-container">
+            <a href="{{ url }}">
+                <button>PLACE ORDER</button>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

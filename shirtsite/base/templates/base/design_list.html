@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Dela+Gothic+One&family=Fuggles&family=Inter:wght@100;200&family=Oswald:wght@200;400&family=PT+Sans&family=Pacifico&family=Source+Code+Pro:wght@200;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+    background: url('https://images.pexels.com/photos/6985132/pexels-photo-6985132.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    animation: fadeInBackground 2s ease-in-out;
+}
+
+@keyframes fadeInBackground {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border: 3px solid black;
+    box-shadow: 15px 0px 1px  black;
+    border-radius: 15px;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    color: black;
+    width: 90%;
+    max-width: 500px;
+    animation: fadeInContainer 1s ease-in-out;
+}
+
+@keyframes fadeInContainer {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    margin-left: 125px;
+    margin-right: 10px;
+    font-family: 'Pacifico', cursive;
+    font-size: 70px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    animation: changeFont 4s infinite alternate;
+    animation-iteration-count: 1;
+}
+
+.img-container {
+    max-width: 35%;
+    height: auto;
+    margin: 10px;
+    border: 3px solid black;
+    border-radius: 15px;
+    margin-left: 50px;
+}
+
+.img-container img{
+    max-width: 100%;
+    border-radius: 10px;
+    height: auto;
+}
+ 
+.container button{
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+    font-size: 24px;
+    font-family: 'Source Code Pro', monospace;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+
+
+.container button:hover{
+    background-color: white;
+    color: black;
+}
+/* Rest of your CSS styles */
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">WearAi</div>
+        <hr>
+        {% for design in designs %}
+            <div class="img-container">
+                <img src="{{design.url}}" alt="Design">
+            </div>
+            
+        {% endfor %}
+        <a href="{% url 'aires' %}"><button>CREATE</button></a>
+    </div>
+</body>
+
+</html>
